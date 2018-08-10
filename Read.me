@@ -1,0 +1,21 @@
+一、核心步骤
+
+1.创建一个Java工程；
+
+2.将JMeter的lib目录下的jar文件添加进此工程的Build Path；
+
+3.创建一个类并实现JavaSamplerClient接口或继承AbstractJavaSamplerClient，并重写；
+
+public Arguments getDefaultParameters();设置可用参数及的默认值；
+public void setupTest(JavaSamplerContext arg0)：每个线程测试前执行一次，做一些初始化工作；
+public SampleResult runTest(JavaSamplerContext arg0)：开始测试，从arg0参数可以获得参数值；
+public void teardownTest(JavaSamplerContext arg0)：测试结束时调用；
+4.Clean install 为 .jar；
+
+5.将此jar包放入JMETER_HOME\lib\ext目录；
+
+6.以管理员身份打开JMeter；
+
+7.创建线程组
+
+8.在线程组下创建Java Request、查看结果树、聚合报告，进行测试；

@@ -14,16 +14,32 @@
             <groupId>org.apache.jmeter</groupId>
             <artifactId>ApacheJMeter_java</artifactId>
             <version>2.12</version>
+            <exclusions>
+                <exclusion>
+                    <groupId>d-haven-managed-pool</groupId>
+                    <artifactId>d-haven-managed-pool</artifactId>
+                </exclusion>
+            </exclusions>
         </dependency>
 
+        <!-- https://mvnrepository.com/artifact/d-haven-mpool/managed-pool -->
         <dependency>
             <groupId>d-haven-mpool</groupId>
             <artifactId>managed-pool</artifactId>
             <version>1.0</version>
+            <exclusions>
+                <exclusion>
+                    <groupId>event</groupId>
+                    <artifactId>event</artifactId>
+                </exclusion>
+            </exclusions>
         </dependency>
 
-
-
+        <dependency>
+            <groupId>d-haven-event</groupId>
+            <artifactId>d-haven-event</artifactId>
+            <version>1.0.3</version>
+        </dependency>
     </dependencies>
 
 </project>
